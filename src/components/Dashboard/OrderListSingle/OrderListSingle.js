@@ -12,7 +12,6 @@ const OrderListSingle = ({ singleBooking }) => {
     fetch(`http://localhost:5000/loadSingleService/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0]);
         const changedStatus = { ...data[0] };
         changedStatus.status = status;
         console.log(changedStatus);
@@ -20,17 +19,20 @@ const OrderListSingle = ({ singleBooking }) => {
       });
   };
 
+  
   useEffect(() => {
-    const url = `http://localhost:5000/updateOrderedService`;
+    const url = 'http://localhost:5000/updateOrderedService/' + readyUpService.id;
 
     fetch(url, {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(readyUpService),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(readyUpService),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log(data[0]));
   }, [readyUpService]);
+
+
 
   return (
     <div style={{ borderRadius: "0.5em" }} className="row py-2 px-2">
@@ -78,7 +80,7 @@ const OrderListSingle = ({ singleBooking }) => {
             Done
           </Button>
         </ButtonGroup>
-        <p className="my-0 text-white text-center">Pending</p>
+        <p className="my-0 py-1 text-white text-center"> {singleBooking.serviceStatus} </p>
       </div>
     </div>
   );

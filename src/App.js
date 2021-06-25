@@ -4,11 +4,14 @@ import "./App.css";
 import AddAdmin from "./components/Dashboard/AddAdmin/AddAdmin";
 import AddService from "./components/Dashboard/AddService/AddService";
 import Book from "./components/Dashboard/Book/Book";
+import BookingList from "./components/Dashboard/BookingList/BookingList";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import ManageServices from "./components/Dashboard/ManageServices/ManageServices";
 import OrderList from "./components/Dashboard/OrderList/OrderList";
 import Review from "./components/Dashboard/Review/Review";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login/Login";
+import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
@@ -32,9 +35,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
           <Route path="/orderList">
             <OrderList></OrderList>
           </Route>
@@ -44,8 +47,14 @@ function App() {
           <Route path="/addAdmin">
             <AddAdmin></AddAdmin>
           </Route>
+          <Route path="/manageServices">
+            <ManageServices></ManageServices>
+          </Route>
           <Route path="/book/:bookCode">
             <Book></Book>
+          </Route>
+          <Route path="/bookingList">
+            <BookingList></BookingList>
           </Route>
           <Route path="/review">
             <Review></Review>

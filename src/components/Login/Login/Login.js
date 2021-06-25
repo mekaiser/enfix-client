@@ -3,7 +3,7 @@ import "firebase/auth";
 import React, { useContext } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../../App";
-import googleIcon from '../../../images/google.png';
+import googleIcon from "../../../images/google.png";
 import NavbarHeader from "../../Shared/NavbarHeader/NavbarHeader";
 import firebaseConfig from "../firebase.config";
 import "./Login.css";
@@ -45,13 +45,22 @@ const Login = () => {
     <section style={{ backgroundColor: "#091022", height: "1000px" }}>
       <NavbarHeader></NavbarHeader>
       <div className="login-btn container text-center">
-        <button
-          onClick={handleGoogleSignIn}
-          type="button"
-          className="btn btn-custom"
-        >
-          <img style={{width: "25px", marginRight: '0.2em'}} src={googleIcon} alt="googleIcon" /> Login With Google
-        </button>
+        {loggedInUser.isSignedIn ? (
+          <h2 style={{fontWeight: "700" }} className="text-white text-center">You are already logged In</h2>
+        ) : (
+          <button
+            onClick={handleGoogleSignIn}
+            type="button"
+            className="btn btn-custom"
+          >
+            <img
+              style={{ width: "25px", marginRight: "0.2em" }}
+              src={googleIcon}
+              alt="googleIcon"
+            />{" "}
+            Login With Google
+          </button>
+        )}
       </div>
     </section>
   );

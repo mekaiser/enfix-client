@@ -26,7 +26,6 @@ const Book = () => {
           serviceId: data[0]?.id,
           serviceName: data[0]?.name,
           servicePrice: data[0]?.price,
-          serviceStatus: "",
         };
         // console.log('cart', serviceCart);
         setCart(serviceCart);
@@ -34,8 +33,15 @@ const Book = () => {
   }, [bookCode]);
 
   const handlePaymentSuccess = (paymentId) => {
+    const loggedInUserInfo = {
+      name: loggedInUser.name,
+      email: loggedInUser.email
+    }
+    const serviceId = cart.serviceId;
     const orderedDetails = {
-      ...loggedInUser,
+      ...loggedInUserInfo,
+      serviceId,
+      serviceStatus: "Pending",
       services: cart,
       shipment: shippingData,
       paymentId,
