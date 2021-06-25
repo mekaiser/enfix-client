@@ -1,0 +1,20 @@
+.card-custom {
+  width: 25rem;
+  margin: 1em;
+  border: none;
+}
+.card-img-custom {
+  width: 7rem;
+  padding-top: 3em;
+}
+.btn-services-card {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: white;
+  background-color: #fd374e;
+  border: none;
+  padding: 0.5em 1em;
+}
+
+@media (max-width: 992px) {
+}

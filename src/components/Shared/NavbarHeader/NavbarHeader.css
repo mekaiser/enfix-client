@@ -1,0 +1,35 @@
+.navbar-custom {
+  background-color: rgba(9, 16, 34, 0.6);
+  padding: 0.5em 4em;
+}
+.navbar-brand-custom {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #fd374e !important;
+}
+.navbar-nav-custom {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+}
+.navbar-nav-custom:hover,
+.navbar-nav-custom:focus,
+.navbar-nav-custom:active {
+  color: #fd374e !important;
+}
+
+@media (max-width: 992px) {
+  .navbar-custom {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+  }
+  .navbar-brand-custom {
+    font-size: 1.8em;
+  }
+  .navbar-nav-custom {
+    font-size: 1.2em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

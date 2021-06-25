@@ -1,0 +1,13 @@
+.footer-section {
+  padding-top: 8em;
+  padding-bottom: 2em;
+  background-color: #091022;
+}
+.footer-section h2 {
+  color: #fd374e;
+  margin-bottom: 1em;
+}
+.social-media-icon img {
+  width: 30px;
+  margin: 0 0.6em;
+}

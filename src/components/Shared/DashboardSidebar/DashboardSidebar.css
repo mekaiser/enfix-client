@@ -1,0 +1,19 @@
+.dashboard-sidebar-style {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2em 2em;
+  border-radius: 1em;
+}
+.dashboard-sidebar-btn {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+}
+.dashboard-sidebar-btn:hover,
+.dashboard-sidebar-btn:focus,
+.dashboard-sidebar-btn:active {
+  color: #fd374e !important;
+}
+.dashboard-sidebar-btn-link {
+  text-decoration: none;
+}

@@ -1,0 +1,16 @@
+.services-section {
+  background-color: #f2f3f7;
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+.section-title-dark {
+  font-weight: 700;
+  color: #091022;
+}
+.section-title-red {
+  font-weight: 700;
+  color: #fd374e;
+}
+.services-container {
+  margin: 4em 2em 2em 2em;
+}
