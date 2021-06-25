@@ -8,7 +8,7 @@ const DashboardSidebar = () => {
   const [adminLoggedIn, setAdminLoggedIn] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/isAdminLoggedIn/" + loggedInUser.email)
+    fetch("https://glacial-inlet-47759.herokuapp.com/isAdminLoggedIn/" + loggedInUser.email)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

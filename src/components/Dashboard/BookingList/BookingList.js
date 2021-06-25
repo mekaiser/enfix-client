@@ -9,7 +9,7 @@ const BookingList = () => {
   const [bookingList, setBookingList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/loadAllBookingsByEmail/" + loggedInUser.email)
+    fetch("https://glacial-inlet-47759.herokuapp.com/loadAllBookingsByEmail/" + loggedInUser.email)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -9,7 +9,7 @@ const OrderListSingle = ({ singleBooking }) => {
     console.log(status, serviceId);
     setStatus(status);
 
-    fetch(`http://localhost:5000/loadSingleService/${serviceId}`)
+    fetch(`https://glacial-inlet-47759.herokuapp.com/loadSingleService/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
         const changedStatus = { ...data[0] };
@@ -21,7 +21,7 @@ const OrderListSingle = ({ singleBooking }) => {
 
   
   useEffect(() => {
-    const url = 'http://localhost:5000/updateOrderedService/' + readyUpService.id;
+    const url = 'https://glacial-inlet-47759.herokuapp.com/updateOrderedService/' + readyUpService.id;
 
     fetch(url, {
       method: "PATCH",
