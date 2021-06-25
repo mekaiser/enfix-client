@@ -15,6 +15,10 @@
 }
 .repairman-img {
   width: 250px;
+  transition: transform 0.3s;
+}
+.repairman-img:hover {
+  transform: scale(1.2);
 }
 @media (max-width: 992px) {
 }

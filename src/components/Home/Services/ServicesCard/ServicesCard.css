@@ -6,6 +6,10 @@
 .card-img-custom {
   width: 7rem;
   padding-top: 3em;
+  transition: transform 0.3s;
+}
+.card-img-custom:hover {
+  transform: scale(1.2);
 }
 .btn-services-card {
   font-size: 1.2em;
