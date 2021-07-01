@@ -25,7 +25,7 @@ const Dashboard = () => {
   }, [loggedInUser.email, setSpinner]);
 
   return (
-    <section style={{ backgroundColor: "#091022", height: "1000px" }}>
+    <section style={{ backgroundColor: "#091022", height: "100%", minHeight: "100vh" }}>
       <NavbarHeader></NavbarHeader>
       <div className="container">
         {spinner ? (

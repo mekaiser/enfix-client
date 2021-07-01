@@ -40,7 +40,7 @@ const Login = () => {
       });
   };
   return (
-    <section style={{ backgroundColor: "#091022", height: "1000px" }}>
+    <section style={{ backgroundColor: "#091022", minHeight: "100vh" }}>
       <NavbarHeader></NavbarHeader>
       <div className="login-btn container text-center">
         {loggedInUser.isSignedIn ? (
