@@ -1,11 +1,10 @@
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import AddAdmin from "./components/Dashboard/AddAdmin/AddAdmin";
 import AddService from "./components/Dashboard/AddService/AddService";
-import Book from "./components/Dashboard/Book/Book";
 import BookingList from "./components/Dashboard/BookingList/BookingList";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import AddAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
 import ManageServices from "./components/Dashboard/ManageServices/ManageServices";
 import OrderList from "./components/Dashboard/OrderList/OrderList";
 import Review from "./components/Dashboard/Review/Review";
@@ -35,7 +34,7 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <PrivateRoute path="/dashboard">
+          <PrivateRoute path="/dashboard/:serviceId">
             <Dashboard></Dashboard>
           </PrivateRoute>
           <PrivateRoute path="/orderList">
@@ -49,9 +48,6 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/manageServices">
             <ManageServices></ManageServices>
-          </PrivateRoute>
-          <PrivateRoute path="/book/:bookCode">
-            <Book></Book>
           </PrivateRoute>
           <PrivateRoute path="/bookingList">
             <BookingList></BookingList>

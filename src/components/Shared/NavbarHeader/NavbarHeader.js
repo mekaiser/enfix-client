@@ -18,13 +18,11 @@ const NavbarHeader = () => {
       .auth()
       .signOut()
       .then(() => {
-        console.log('Hi');
         const newUserInfo = { ...loggedInUser };
         newUserInfo.name = "";
         newUserInfo.email = "";
         newUserInfo.isSignedIn = false;
         newUserInfo.success = false;
-        console.log(newUserInfo);
         setLoggedInUser(newUserInfo);
         history.replace(from);
       })
@@ -59,7 +57,7 @@ const NavbarHeader = () => {
             </Link>
             <Link
               className="nav-link navbar-nav-custom text-white"
-              to="/dashboard"
+              to="/dashboard/0"
             >
               Dashboard
             </Link>

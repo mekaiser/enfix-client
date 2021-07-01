@@ -17,13 +17,12 @@ const ManageServicesSingle = (props) => {
   };
 
   useEffect(() => {
-    fetch("https://glacial-inlet-47759.herokuapp.com/removeService/" + serviceId, {
+    fetch("http://localhost:5000/removeService/" + serviceId, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((result) => {
         if (result) {
-          console.log(result);
           setServicesLength(servicesLength - 1);
         }
       });

@@ -6,7 +6,7 @@ const ServicesCard = ({service}) => {
   const history = useHistory();
   const serviceId = service.id;
   const handleBookNow = (id) => {
-    history.push(`/book/${id}`);
+    history.push(`/dashboard/${id}`);
   }
     return (
         <div className="card card-custom shadow text-center">

@@ -26,7 +26,6 @@ const Login = () => {
       .then((result) => {
         /** @type {firebase.auth.OAuthCredential} */
         const user = result.user;
-        console.log(user);
         const { displayName, email } = user;
         const newUserInfo = { ...loggedInUser };
         newUserInfo.name = displayName;
@@ -38,7 +37,6 @@ const Login = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
       });
   };
   return (

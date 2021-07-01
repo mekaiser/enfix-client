@@ -1,38 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 
 const OrderListSingle = ({ singleBooking }) => {
-  const [status, setStatus] = useState("");
-  const [readyUpService, setReadyUpService] = useState([]);
+  const [loadedStatus, setLoadedStatus] = useState("");
+  const [serviceId, setServiceId] = useState("");
+  const [firstTimePageLoad, setFirstTimePageLoad] = useState(true);
 
-  const handleStatus = (status, serviceId) => {
-    console.log(status, serviceId);
-    setStatus(status);
+  const handleStatus = (updatedStatus, serviceId) => {
+    setFirstTimePageLoad(false);
+    console.log("handleStatus", updatedStatus, serviceId);
+    setServiceId(serviceId);
 
-    fetch(`https://glacial-inlet-47759.herokuapp.com/loadSingleService/${serviceId}`)
+    fetch(`http://localhost:5000/loadSingleService/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
-        const changedStatus = { ...data[0] };
-        changedStatus.status = status;
-        console.log(changedStatus);
-        setReadyUpService(changedStatus);
+        const serviceWithNewStatus = { ...data[0] };
+        serviceWithNewStatus.status = updatedStatus;
+        console.log("not useState", serviceWithNewStatus);
+        handleStatusUpdate(serviceWithNewStatus);
       });
   };
 
-  
-  useEffect(() => {
-    const url = 'https://glacial-inlet-47759.herokuapp.com/updateOrderedService/' + readyUpService.id;
+  const handleStatusUpdate = (changedStatus) => {
+    const url =
+      "http://localhost:5000/updateOrderedService/" + changedStatus.id;
 
     fetch(url, {
       method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(readyUpService),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(changedStatus),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data[0]));
-  }, [readyUpService]);
+      .then((data) => {
+        console.log(data);
+        loadUpdatedStatus(serviceId);
+      });
+  };
 
+  const loadUpdatedStatus = () => {
+    const url = "http://localhost:5000/loadSingleOrder/" + serviceId;
 
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("loaded Status", data[0].serviceStatus);
+        setLoadedStatus(data[0].serviceStatus);
+      });
+  };
 
   return (
     <div style={{ borderRadius: "0.5em" }} className="row py-2 px-2">
@@ -52,8 +66,6 @@ const OrderListSingle = ({ singleBooking }) => {
         </p>
       </div>
       <div className="col-md-4">
-        {/* <p style={{ fontWeight: "600" }} className="my-0 text-white">
-        </p> */}
         <ButtonGroup className="mt-4" aria-label="Basic example">
           <Button
             onClick={() =>
@@ -80,7 +92,9 @@ const OrderListSingle = ({ singleBooking }) => {
             Done
           </Button>
         </ButtonGroup>
-        <p className="my-0 py-1 text-white text-center"> {singleBooking.serviceStatus} </p>
+        <p className="my-0 py-1 text-white text-center">
+          {firstTimePageLoad ? singleBooking.serviceStatus : loadedStatus}
+        </p>
       </div>
     </div>
   );

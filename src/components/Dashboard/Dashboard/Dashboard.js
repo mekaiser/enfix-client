@@ -1,26 +1,45 @@
-import React from "react";
-import DashboardSidebar from "../../Shared/DashboardSidebar/DashboardSidebar";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { UserContext } from "../../../App";
 import NavbarHeader from "../../Shared/NavbarHeader/NavbarHeader";
+import DashboardChecker from "../DashboardChecker/DashboardChecker";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-    // const [orderList, setOrderList] = useState(false);
-    // const [addService, setAddService] = useState(false);
-    // const [makeAdmin, setMakeAdmin] = useState(false);
-    // const [manageServices, setManageServices] = useState(false);
-    // const [book, setBook] = useState(false);
-    // const [bookingList, setBookingList] = useState(false);
-    // const [review, setReview] = useState(false);
+  const {serviceId} = useParams();
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [adminLoggedIn, setAdminLoggedIn] = useState(false);
+  const [spinner, setSpinner] = useState(true);
+  useEffect(() => {
+    fetch("http://localhost:5000/isAdminLoggedIn/" + loggedInUser.email)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length) {
+          setAdminLoggedIn(true);
+          setSpinner(false);
+        }
+        else{
+          setSpinner(false);
+        }
+      });
+  }, [loggedInUser.email, setSpinner]);
+
   return (
     <section style={{ backgroundColor: "#091022", height: "1000px" }}>
       <NavbarHeader></NavbarHeader>
       <div className="container">
-        <div className="row mt-5">
-          <DashboardSidebar></DashboardSidebar>
-          <div className="col-md-9">
-              
+        {spinner ? (
+          <div className="d-flex justify-content-center mt-5">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden"></span>
+            </div>
           </div>
-        </div>
+        ) : (
+          <DashboardChecker
+            adminLoggedIn={adminLoggedIn}
+            serviceId={serviceId}
+          ></DashboardChecker>
+        )}
       </div>
     </section>
   );
