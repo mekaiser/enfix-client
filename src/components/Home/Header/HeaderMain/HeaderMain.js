@@ -1,5 +1,5 @@
 import React from "react";
-import repairMan from "../../../../images/repair-man.png";
+import repairMan from "../../../../images/header/repair-man.png";
 import "./HeaderMain.css";
 
 const HeaderMain = () => {

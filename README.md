@@ -1,22 +1,29 @@
 # ENFIX
 
-ENFIX is a dynamic electronics repairing website where user can book a specific service by filling up all necessary info and completing the payment process.
+![ENFIX](https://raw.githubusercontent.com/mekaiser/mekaiser/main/images/github-banner.jpg)
 
-## FEATURES (USER)
+ENFIX is a dynamic electronics repairing website where users can book a service by completing the online payment process.
 
-- Plug and play login system using google.
-- Can view all his booking list and their status from dashboard.
-- Can write a review on ENFIX Service from the review section of the dashboard.
+## FEATURES
 
-## FEATURES (ADMIN)
-
-- Can view all orders from the users and update their status from the order list section of the dashboard.
-- Can add a service and remove one.
-- Can make another person an admin.
+- Dynamic services section and testimonials section.
+- One-click login with google.
+- Users can book services, monitor their booklist and the status of their book.
+- Users can write a review about the services.
+- Admin can add services, update and delete services.
+- Admin can view all booklists by the users and update their status.
+- Admin can add new admin.
+- Firebase Authentication & hosting, Stripe payment gateway system.
 
 ## MADE WITH
 
-reactjs, react-bootstrap, mongodb, nodejs, express and stripe.
+- React
+- React Bootstrap
+- Firebase
+- Express JS
+- MongoDB
+- Bootstrap5
+- Stripe
 
 ### LIVE SITE
 
