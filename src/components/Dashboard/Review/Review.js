@@ -14,7 +14,7 @@ const Review = () => {
       position: data.position,
       review: data.review,
     };
-    const url = `http://localhost:5000/addReview`;
+    const url = `https://glacial-inlet-47759.herokuapp.com/addReview`;
 
     fetch(url, {
       method: "POST",

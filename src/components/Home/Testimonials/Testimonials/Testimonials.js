@@ -6,7 +6,7 @@ const Testimonials = () => {
   const [loadedReviews, setLoadedReviews] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/loadReviews')
+    fetch('https://glacial-inlet-47759.herokuapp.com/loadReviews')
     .then(res => res.json())
     .then(data => {
       setLoadedReviews(data);

@@ -20,7 +20,7 @@ const AddService = () => {
       details: data.serviceDetails,
       imageURL: imageURL,
     };
-    const url = `http://localhost:5000/addService`;
+    const url = `https://glacial-inlet-47759.herokuapp.com/addService`;
 
     fetch(url, {
       method: "POST",

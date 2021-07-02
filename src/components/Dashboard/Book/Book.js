@@ -14,7 +14,7 @@ const Book = ({ serviceId, bookPlease }) => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/loadSingleService/${serviceId}`)
+    fetch(`https://glacial-inlet-47759.herokuapp.com/loadSingleService/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
         const serviceCart = {
@@ -51,7 +51,7 @@ const Book = ({ serviceId, bookPlease }) => {
       orderTime: new Date(),
     };
 
-    fetch("http://localhost:5000/addOrderedService", {
+    fetch("https://glacial-inlet-47759.herokuapp.com/addOrderedService", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderedDetails),

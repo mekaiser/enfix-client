@@ -17,7 +17,7 @@ const ManageServicesSingle = (props) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/removeService/" + serviceId, {
+    fetch("https://glacial-inlet-47759.herokuapp.com/removeService/" + serviceId, {
       method: "DELETE",
     })
       .then((res) => res.json())

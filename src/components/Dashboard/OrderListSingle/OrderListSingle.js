@@ -3,27 +3,24 @@ import { Button, ButtonGroup } from "react-bootstrap";
 
 const OrderListSingle = ({ singleBooking }) => {
   const [loadedStatus, setLoadedStatus] = useState("");
-  const [serviceId, setServiceId] = useState("");
   const [firstTimePageLoad, setFirstTimePageLoad] = useState(true);
 
   const handleStatus = (updatedStatus, serviceId) => {
-    setFirstTimePageLoad(false);
     console.log("handleStatus", updatedStatus, serviceId);
-    setServiceId(serviceId);
 
-    fetch(`http://localhost:5000/loadSingleService/${serviceId}`)
+    fetch(`https://glacial-inlet-47759.herokuapp.com/loadSingleService/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
         const serviceWithNewStatus = { ...data[0] };
         serviceWithNewStatus.status = updatedStatus;
         console.log("not useState", serviceWithNewStatus);
-        handleStatusUpdate(serviceWithNewStatus);
+        handleStatusUpdate(serviceWithNewStatus, serviceId);
       });
   };
 
-  const handleStatusUpdate = (changedStatus) => {
+  const handleStatusUpdate = (changedStatus, serviceId) => {
     const url =
-      "http://localhost:5000/updateOrderedService/" + changedStatus.id;
+      "https://glacial-inlet-47759.herokuapp.com/updateOrderedService/" + changedStatus.id;
 
     fetch(url, {
       method: "PATCH",
@@ -37,14 +34,15 @@ const OrderListSingle = ({ singleBooking }) => {
       });
   };
 
-  const loadUpdatedStatus = () => {
-    const url = "http://localhost:5000/loadSingleOrder/" + serviceId;
+  const loadUpdatedStatus = (serviceId) => {
+    const url = "https://glacial-inlet-47759.herokuapp.com/loadSingleOrder/" + serviceId;
 
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
         console.log("loaded Status", data[0].serviceStatus);
         setLoadedStatus(data[0].serviceStatus);
+        setFirstTimePageLoad(false);
       });
   };
 

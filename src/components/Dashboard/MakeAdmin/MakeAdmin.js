@@ -13,7 +13,7 @@ const MakeAdmin = () => {
       adminEmail: data.email,
     };
 
-    const url = `http://localhost:5000/addAdmin`;
+    const url = `https://glacial-inlet-47759.herokuapp.com/addAdmin`;
 
     fetch(url, {
       method: "POST",

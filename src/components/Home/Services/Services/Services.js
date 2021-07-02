@@ -7,7 +7,7 @@ const Services = () => {
   const [loadedServices, setLoadedServices] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/loadServices')
+    fetch('https://glacial-inlet-47759.herokuapp.com/loadServices')
     .then(res => res.json())
     .then(data => {
       setLoadedServices(data);

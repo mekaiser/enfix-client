@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [adminLoggedIn, setAdminLoggedIn] = useState(false);
   const [spinner, setSpinner] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/isAdminLoggedIn/" + loggedInUser.email)
+    fetch("https://glacial-inlet-47759.herokuapp.com/isAdminLoggedIn/" + loggedInUser.email)
       .then((res) => res.json())
       .then((data) => {
         if (data.length) {

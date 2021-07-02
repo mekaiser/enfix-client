@@ -5,7 +5,7 @@ import "./OrderList.css";
 const OrderList = () => {
   const [loadedBookings, setLoadedBookings] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/loadAllBookings")
+    fetch("https://glacial-inlet-47759.herokuapp.com/loadAllBookings")
       .then((res) => res.json())
       .then((data) => {
         setLoadedBookings(data);
