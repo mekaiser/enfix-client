@@ -6,14 +6,12 @@ const OrderListSingle = ({ singleBooking }) => {
   const [firstTimePageLoad, setFirstTimePageLoad] = useState(true);
 
   const handleStatus = (updatedStatus, serviceId) => {
-    console.log("handleStatus", updatedStatus, serviceId);
 
     fetch(`https://glacial-inlet-47759.herokuapp.com/loadSingleService/${serviceId}`)
       .then((res) => res.json())
       .then((data) => {
         const serviceWithNewStatus = { ...data[0] };
         serviceWithNewStatus.status = updatedStatus;
-        console.log("not useState", serviceWithNewStatus);
         handleStatusUpdate(serviceWithNewStatus, serviceId);
       });
   };
@@ -29,7 +27,6 @@ const OrderListSingle = ({ singleBooking }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         loadUpdatedStatus(serviceId);
       });
   };
@@ -40,7 +37,6 @@ const OrderListSingle = ({ singleBooking }) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log("loaded Status", data[0].serviceStatus);
         setLoadedStatus(data[0].serviceStatus);
         setFirstTimePageLoad(false);
       });
