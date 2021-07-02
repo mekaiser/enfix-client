@@ -24,7 +24,8 @@ ENFIX is a dynamic electronics repairing website where users can book a service 
 - MongoDB
 - Bootstrap5
 - Stripe
+- Heroku
 
-### LIVE SITE
+### `LIVE SITE:` [ENFIX](https://enfix-web.web.app/)
 
-Visit - https://enfix-web.web.app/
+**_Server Repository:_** **_[ENFIX CLIENT](https://github.com/mekaiser/enfix-server)_**
