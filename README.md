@@ -1,6 +1,6 @@
 # ENFIX
 
-![ENFIX](https://raw.githubusercontent.com/mekaiser/mekaiser/main/images/github-banner.jpg)
+![ENFIX](https://raw.githubusercontent.com/mekaiser/enfix-client/main/src/images/enfix.png)
 
 ENFIX is a dynamic electronics repairing website where users can book a service by completing the online payment process.
 
