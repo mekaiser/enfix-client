@@ -33,7 +33,7 @@ const NavbarHeader = () => {
 
   return (
     <nav style={{ margin: "0em 10vw" }}>
-      <Navbar className="navbar-custom" expand="lg">
+      <Navbar variant="dark" className="navbar-custom" expand="lg">
         <Navbar.Brand>
           <Link className="navbar-brand navbar-brand-custom" to="/home">
             ENFIX
