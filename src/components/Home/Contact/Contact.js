@@ -4,16 +4,19 @@ import "./Contact.css";
 const Contact = () => {
   return (
     <section className="contact-section">
-        <h1 className="section-title-red text-center">Contact</h1>
+      <h1 className="section-title-red text-center">Contact</h1>
       <div className="contact-form">
         <form>
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label contact-form-label">
+            <label
+              for="exampleInputEmail1"
+              className="form-label contact-form-label"
+            >
               Full Name
             </label>
             <input
               type="text"
-              name='name'
+              name="name"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
@@ -22,12 +25,15 @@ const Contact = () => {
           <div className="row">
             <div className="col-md-6">
               <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label contact-form-label">
+                <label
+                  for="exampleInputEmail1"
+                  className="form-label contact-form-label"
+                >
                   Email
                 </label>
                 <input
                   type="email"
-                  name='email'
+                  name="email"
                   className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
@@ -36,12 +42,15 @@ const Contact = () => {
             </div>
             <div className="col-md-6">
               <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label contact-form-label">
+                <label
+                  for="exampleInputEmail1"
+                  className="form-label contact-form-label"
+                >
                   Phone Number
                 </label>
                 <input
                   type="text"
-                  name='phoneNumber'
+                  name="phoneNumber"
                   className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
@@ -50,18 +59,23 @@ const Contact = () => {
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label contact-form-label">
+            <label
+              for="exampleInputPassword1"
+              className="form-label contact-form-label"
+            >
               Your Message
             </label>
-            <input
-                style={{height: '250px'}}
+            <textarea
               type="text"
-              name='message'
+              name="message"
               className="form-control"
-              id="exampleInputPassword1"
-            />
+              id="exampleFormControlTextarea1"
+              rows="8"
+            ></textarea>
           </div>
-          <button type="submit" className="btn btn-services-card my-4">Submit</button>
+          <button type="submit" className="btn btn-services-card my-4">
+            Submit
+          </button>
         </form>
       </div>
     </section>
