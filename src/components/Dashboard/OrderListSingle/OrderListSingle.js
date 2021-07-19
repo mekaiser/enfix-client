@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
+import './OrderListSingle.css';
 
 const OrderListSingle = ({ singleBooking }) => {
   const [loadedStatus, setLoadedStatus] = useState("");
@@ -17,6 +18,8 @@ const OrderListSingle = ({ singleBooking }) => {
   };
 
   const handleStatusUpdate = (changedStatus, serviceId) => {
+    
+    changedStatus.paymentId = singleBooking.paymentId;
     const url =
       "https://glacial-inlet-47759.herokuapp.com/updateOrderedService/" + changedStatus.id;
 
@@ -27,12 +30,12 @@ const OrderListSingle = ({ singleBooking }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        loadUpdatedStatus(serviceId);
+        loadUpdatedStatus(changedStatus.paymentId);
       });
   };
 
-  const loadUpdatedStatus = (serviceId) => {
-    const url = "https://glacial-inlet-47759.herokuapp.com/loadSingleOrder/" + serviceId;
+  const loadUpdatedStatus = (paymentId) => {
+    const url = "https://glacial-inlet-47759.herokuapp.com/loadSingleOrder/" + paymentId;
 
     fetch(url)
       .then((res) => res.json())
@@ -62,33 +65,30 @@ const OrderListSingle = ({ singleBooking }) => {
       <div className="col-md-4">
         <ButtonGroup className="mt-4" aria-label="Basic example">
           <Button
+          className={`${firstTimePageLoad && singleBooking.serviceStatus === "Pending" && "red-btn"} ${loadedStatus === "Pending"? "red-btn" : "blue-btn"}`}
             onClick={() =>
               handleStatus("Pending", singleBooking.services.serviceId)
             }
-            variant="danger"
           >
             Pending
           </Button>
           <Button
+          className={`${firstTimePageLoad && singleBooking.serviceStatus === "On Going" && "red-btn"} ${loadedStatus === "On Going"? "red-btn" : "blue-btn"}`}
             onClick={() =>
               handleStatus("On Going", singleBooking.services.serviceId)
             }
-            variant="warning"
           >
             On Going
           </Button>
           <Button
+          className={`${firstTimePageLoad && singleBooking.serviceStatus === "Done" && "red-btn"} ${loadedStatus === "Done"? "red-btn" : "blue-btn"}`}
             onClick={() =>
               handleStatus("Done", singleBooking.services.serviceId)
             }
-            variant="success"
           >
             Done
           </Button>
         </ButtonGroup>
-        <p className="my-0 py-1 text-white text-center">
-          {firstTimePageLoad ? singleBooking.serviceStatus : loadedStatus}
-        </p>
       </div>
     </div>
   );

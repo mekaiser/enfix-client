@@ -1,0 +1,24 @@
+.blue-btn {
+  border-color: #fd374e;
+  box-shadow: none;
+  background-color: rgba(9, 16, 34);
+}
+.blue-btn:hover,
+.blue-btn:focus,
+.blue-btn:active {
+  border-color: #fd374e;
+  box-shadow: none;
+  background-color: #fd374e;
+}
+.red-btn {
+  border-color: #fd374e;
+  box-shadow: none;
+  background-color: #fd374e;
+}
+.red-btn:hover,
+.red-btn:focus,
+.red-btn:active {
+  border-color: #fd374e;
+  box-shadow: none;
+  background-color: #fd374e;
+}

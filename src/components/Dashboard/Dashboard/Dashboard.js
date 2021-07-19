@@ -30,8 +30,8 @@ const Dashboard = () => {
       <div className="container">
         {spinner ? (
           <div className="d-flex justify-content-center mt-5">
-            <div class="spinner-border text-light" role="status">
-              <span class="visually-hidden"></span>
+            <div className="spinner-border text-light" role="status">
+              <span className="visually-hidden"></span>
             </div>
           </div>
         ) : (
