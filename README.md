@@ -15,7 +15,7 @@ ENFIX is a dynamic electronics repairing website where users can book a service 
 - Admin can add new admin.
 - Firebase Authentication & hosting, Stripe payment gateway system.
 
-## MADE WITH
+## KEY TECHNOLOGY
 
 - React
 - React Bootstrap
