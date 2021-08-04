@@ -20,7 +20,7 @@ ENFIX is a dynamic electronics repairing website where users can book a service 
 - React
 - React Bootstrap
 - Firebase
-- Express JS
+- ExpressJS
 - MongoDB
 - Bootstrap5
 - Stripe
