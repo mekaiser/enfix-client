@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5a7c79bd.chunk.css",
+    "main.js": "/static/js/main.c0af1bf5.chunk.js",
+    "main.js.map": "/static/js/main.c0af1bf5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d65b6d68.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d65b6d68.js.map",
+    "static/js/2.490505ad.chunk.js": "/static/js/2.490505ad.chunk.js",
+    "static/js/2.490505ad.chunk.js.map": "/static/js/2.490505ad.chunk.js.map",
+    "static/js/3.63ec05f3.chunk.js": "/static/js/3.63ec05f3.chunk.js",
+    "static/js/3.63ec05f3.chunk.js.map": "/static/js/3.63ec05f3.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.5a7c79bd.chunk.css.map": "/static/css/main.5a7c79bd.chunk.css.map",
+    "static/js/2.490505ad.chunk.js.LICENSE.txt": "/static/js/2.490505ad.chunk.js.LICENSE.txt",
+    "static/media/about-us-photo.da844241.jpg": "/static/media/about-us-photo.da844241.jpg",
+    "static/media/Header.css": "/static/media/header-img.47f68ebf.jpg",
+    "static/media/repair-man.ceb143aa.png": "/static/media/repair-man.ceb143aa.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d65b6d68.js",
+    "static/js/2.490505ad.chunk.js",
+    "static/css/main.5a7c79bd.chunk.css",
+    "static/js/main.c0af1bf5.chunk.js"
+  ]
+}
