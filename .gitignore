@@ -6,7 +6,7 @@
 .pnp.js
 
 # configs
-/src/components
+src/components
 
 # testing
 /coverage
