@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# configs
+/src/components/Login/firebase.config.js
+
 # testing
 /coverage
 
