@@ -2,7 +2,7 @@
 
 ![ENFIX](https://raw.githubusercontent.com/mekaiser/enfix-client/main/src/images/enfix.png)
 
-ENFIX is a dynamic electronics repair website where users can book a service after logging in and completing the online payment process.
+ENFIX is a dynamic electronics repair website where users can order a service after logging in and completing the online payment process.
 
 ## FEATURES
 
