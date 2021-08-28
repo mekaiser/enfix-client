@@ -11,7 +11,7 @@ ENFIX is a dynamic electronics repair website where users can book a service aft
 - Users can book services, monitor their booklist and the status of their book.
 - Users can write a review about the services.
 - Admin can add services, update and delete services.
-- Admin can view all booklists by the users and update their status.
+- Admin can view all ordered services by the users and update their status.
 - Admin can add new admin.
 - Firebase Authentication & hosting, Stripe payment gateway system.
 
